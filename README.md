@@ -43,6 +43,36 @@ import swagger_client
 
 ## Getting Started
 
+### Example
+```
+from __future__ import print_function
+from distutils.command.config import config
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+conf = swagger_client.Configuration()
+conf.host = "https://api.met.no/weatherapi/locationforecast/2.0"
+
+# create an instance of the API class
+api_instance = swagger_client.DataApi(swagger_client.ApiClient(conf))
+lat = 50.1106444 # float | Latitude
+lon = 8.6820917 # float | Longitude
+
+try:
+    api_response = api_instance.complete_get(lat, lon)
+except ApiException as e:
+    print("Exception when calling DataApi->complete_get: %s\n" % e)
+
+
+# Print date and temperture
+newforecast = api_response.properties.timeseries
+for i in newforecast:
+    pprint(i.time)
+    pprint(i.data.instant.details.air_temperature)
+```
+
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
