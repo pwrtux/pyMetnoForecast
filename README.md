@@ -44,7 +44,7 @@ import swagger_client
 ## Getting Started
 
 ### Example
-```
+```python
 from __future__ import print_function
 from distutils.command.config import config
 import time
