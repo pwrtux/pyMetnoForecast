@@ -8,9 +8,6 @@ pip install git+https://github.com/pwrtux/pyMetnoForecast.git
 ## Example
 
 ```python
-from __future__ import print_function
-from distutils.command.config import config
-import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
